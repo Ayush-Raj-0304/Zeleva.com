@@ -18,6 +18,17 @@ const cartSlice = createSlice({
       }
     },
     removeFromCart(state, action) {
+      const { id } = action.payload;
+      const index = state.items.findIndex(item => item.id === id);
+      if (index >= 0) {
+        if (state.items[index].quantity > 1) {
+          state.items[index].quantity -= 1;
+        } else {
+          state.items.splice(index, 1); // remove if quantity reaches 0
+        }
+      }
+    },
+    removeItemCompletely(state, action) {
       state.items = state.items.filter(i => i.id !== action.payload);
     },
     updateQuantity(state, action) {
@@ -33,7 +44,7 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addToCart, removeFromCart, updateQuantity, clearCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, removeItemCompletely, updateQuantity, clearCart } = cartSlice.actions;
 
 // Selectors
 export const selectCartTotal = (state) => 

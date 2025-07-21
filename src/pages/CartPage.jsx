@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { removeFromCart, updateQuantity, selectCartTotal } from '../redux/cartSlice';
+import { removeItemCompletely, updateQuantity, selectCartTotal } from '../redux/cartSlice';
 import { Link } from 'react-router-dom';
 
 const CartPage = () => {
@@ -14,7 +14,7 @@ const CartPage = () => {
   };
 
   const handleRemove = (id) => {
-    dispatch(removeFromCart(id));
+    dispatch(removeItemCompletely(id));
   };
 
   if (cartItems.length === 0) {
