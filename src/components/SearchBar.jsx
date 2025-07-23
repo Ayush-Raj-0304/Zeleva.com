@@ -9,7 +9,7 @@ const SearchBar = () => {
     <div className="relative group">
       <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
         <svg 
-          className="h-5 w-5 text-white/40 group-focus-within:text-violet-400 transition-colors duration-300"
+          className="h-5 w-5 text-gray-400 group-focus-within:text-gray-600 transition-colors duration-300"
           fill="none" 
           stroke="currentColor" 
           viewBox="0 0 24 24"
@@ -28,13 +28,13 @@ const SearchBar = () => {
         placeholder="Search products..."
         value={search}
         onChange={(e) => dispatch(setSearch(e.target.value))}
-        className="block w-full pl-12 pr-12 py-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300 hover:bg-white/15"
+        className="block w-full pl-12 pr-12 py-4 bg-gray-100/50 backdrop-blur-lg border border-gray-200/50 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900/20 focus:border-gray-900/30 transition-all duration-300 hover:bg-gray-100/70 focus:bg-white/80"
       />
       
       {search && (
         <button
           onClick={() => dispatch(setSearch(''))}
-          className="absolute inset-y-0 right-0 pr-4 flex items-center text-white/40 hover:text-violet-400 transition-colors duration-300"
+          className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 transition-colors duration-300"
         >
           <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />

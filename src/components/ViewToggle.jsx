@@ -6,13 +6,13 @@ const ViewToggle = () => {
   const currentView = useSelector(state => state.products.view);
 
   return (
-    <div className="inline-flex rounded-2xl bg-white/10 backdrop-blur-lg border border-white/20 p-1">
+    <div className="inline-flex rounded-full bg-gray-100/50 backdrop-blur-lg border border-gray-200/50 p-1">
       <button
         onClick={() => dispatch(setView('grid'))}
-        className={`flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-xl transition-all duration-300 ${
+        className={`flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full transition-all duration-300 ${
           currentView === 'grid'
-            ? 'bg-gradient-to-r from-violet-500 to-purple-600 text-white shadow-lg'
-            : 'text-white/70 hover:text-white hover:bg-white/10'
+            ? 'bg-white shadow-sm text-gray-900 border border-gray-200/50'
+            : 'text-gray-600 hover:text-gray-900 hover:bg-white/50'
         }`}
       >
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -23,10 +23,10 @@ const ViewToggle = () => {
       
       <button
         onClick={() => dispatch(setView('list'))}
-        className={`flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-xl transition-all duration-300 ${
+        className={`flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full transition-all duration-300 ${
           currentView === 'list'
-            ? 'bg-gradient-to-r from-violet-500 to-purple-600 text-white shadow-lg'
-            : 'text-white/70 hover:text-white hover:bg-white/10'
+            ? 'bg-white shadow-sm text-gray-900 border border-gray-200/50'
+            : 'text-gray-600 hover:text-gray-900 hover:bg-white/50'
         }`}
       >
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -1,305 +1,36 @@
-// Mock product data for development. Replace with backend integration later.
-const products = [
-  {
-    id: '1',
-    name: 'Modern Chair',
-    description: 'A stylish and comfortable modern chair for your living room.',
-    price: 129.99,
-    image: 'https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&q=80&w=500',
-    category: 'Furniture',
-    stock: 12,
-    rating: 4.5,
-  },
-  {
-    id: '2',
-    name: 'Wireless Headphones',
-    description: 'High-quality wireless headphones with noise cancellation.',
-    price: 199.99,
-    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=500',
-    category: 'Electronics',
-    stock: 8,
-    rating: 4.7,
-  },
-  {
-    id: '3',
-    name: 'Smart Watch',
-    description: 'Track your fitness and notifications with this smart watch.',
-    price: 89.99,
-    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=500',
-    category: 'Wearables',
-    stock: 15,
-    rating: 4.3,
-  },
-  {
-    id: '4',
-    name: 'Minimalist Lamp',
-    description: 'A minimalist lamp to brighten up your workspace.',
-    price: 49.99,
-    image: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=500',
-    category: 'Lighting',
-    stock: 20,
-    rating: 4.2,
-  },
-  {
-    id: '5',
-    name: 'Eco Water Bottle',
-    description: 'Reusable eco-friendly water bottle for everyday use.',
-    price: 24.99,
-    image: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&q=80&w=500',
-    category: 'Accessories',
-    stock: 30,
-    rating: 4.8,
-  },
-  {
-    id: '6',
-    name: 'Gaming Laptop',
-    description: 'High-performance gaming laptop with RTX graphics.',
-    price: 1299.99,
-    image: 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&q=80&w=500',
-    category: 'Electronics',
-    stock: 5,
-    rating: 4.6,
-  },
-  {
-    id: '7',
-    name: 'Coffee Maker',
-    description: 'Premium coffee maker for the perfect morning brew.',
-    price: 159.99,
-    image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=500',
-    category: 'Kitchen',
-    stock: 18,
-    rating: 4.4,
-  },
-  {
-    id: '8',
-    name: 'Yoga Mat',
-    description: 'Non-slip yoga mat for your daily practice.',
-    price: 39.99,
-    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=500',
-    category: 'Fitness',
-    stock: 25,
-    rating: 4.5,
-  },
-  {
-    id: '9',
-    name: 'Wireless Speaker',
-    description: 'Portable Bluetooth speaker with rich sound quality.',
-    price: 79.99,
-    image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&q=80&w=500',
-    category: 'Electronics',
-    stock: 22,
-    rating: 4.3,
-  },
-  {
-    id: '10',
-    name: 'Office Desk',
-    description: 'Spacious wooden desk perfect for home office.',
-    price: 299.99,
-    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=500',
-    category: 'Furniture',
-    stock: 7,
-    rating: 4.7,
-  },
-  {
-    id: '11',
-    name: 'Running Shoes',
-    description: 'Comfortable running shoes for daily workouts.',
-    price: 119.99,
-    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=500',
-    category: 'Fashion',
-    stock: 14,
-    rating: 4.6,
-  },
-  {
-    id: '12',
-    name: 'Backpack',
-    description: 'Durable backpack for travel and daily use.',
-    price: 69.99,
-    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=500',
-    category: 'Accessories',
-    stock: 19,
-    rating: 4.4,
-  },
-  {
-    id: '13',
-    name: 'Smartphone',
-    description: 'Latest smartphone with advanced camera features.',
-    price: 899.99,
-    image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=500',
-    category: 'Electronics',
-    stock: 10,
-    rating: 4.8,
-  },
-  {
-    id: '14',
-    name: 'Desk Chair',
-    description: 'Ergonomic office chair for comfortable work sessions.',
-    price: 189.99,
-    image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&q=80&w=500',
-    category: 'Furniture',
-    stock: 11,
-    rating: 4.5,
-  },
-  {
-    id: '15',
-    name: 'Kitchen Knife Set',
-    description: 'Professional kitchen knife set for cooking enthusiasts.',
-    price: 129.99,
-    image: 'https://images.unsplash.com/photo-1594736797933-d0b6a76b511e?auto=format&fit=crop&q=80&w=500',
-    category: 'Kitchen',
-    stock: 16,
-    rating: 4.7,
-  },
-  {
-    id: '16',
-    name: 'Sunglasses',
-    description: 'UV protection sunglasses with polarized lenses.',
-    price: 89.99,
-    image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&q=80&w=500',
-    category: 'Fashion',
-    stock: 23,
-    rating: 4.2,
-  },
-  {
-    id: '17',
-    name: 'Tablet',
-    description: '10-inch tablet perfect for work and entertainment.',
-    price: 449.99,
-    image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&q=80&w=500',
-    category: 'Electronics',
-    stock: 13,
-    rating: 4.4,
-  },
-  {
-    id: '18',
-    name: 'Air Purifier',
-    description: 'HEPA air purifier for clean and fresh indoor air.',
-    price: 199.99,
-    image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&q=80&w=500',
-    category: 'Home',
-    stock: 9,
-    rating: 4.6,
-  },
-  {
-    id: '19',
-    name: 'Wireless Mouse',
-    description: 'Ergonomic wireless mouse for productivity.',
-    price: 34.99,
-    image: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&q=80&w=500',
-    category: 'Electronics',
-    stock: 28,
-    rating: 4.3,
-  },
-  {
-    id: '20',
-    name: 'Plant Pot',
-    description: 'Ceramic plant pot for your indoor garden.',
-    price: 19.99,
-    image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&q=80&w=500',
-    category: 'Home',
-    stock: 35,
-    rating: 4.1,
-  },
-  {
-    id: '21',
-    name: 'Mechanical Keyboard',
-    description: 'RGB mechanical keyboard for gaming and typing.',
-    price: 149.99,
-    image: 'https://images.unsplash.com/photo-1541140532154-b024d705b90a?auto=format&fit=crop&q=80&w=500',
-    category: 'Electronics',
-    stock: 12,
-    rating: 4.7,
-  },
-  {
-    id: '22',
-    name: 'Wall Clock',
-    description: 'Modern wall clock for stylish time display.',
-    price: 29.99,
-    image: 'https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?auto=format&fit=crop&q=80&w=500',
-    category: 'Home',
-    stock: 21,
-    rating: 4.0,
-  },
-  {
-    id: '23',
-    name: 'Fitness Tracker',
-    description: 'Advanced fitness tracker with heart rate monitoring.',
-    price: 119.99,
-    image: 'https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?auto=format&fit=crop&q=80&w=500',
-    category: 'Wearables',
-    stock: 17,
-    rating: 4.5,
-  },
-  {
-    id: '24',
-    name: 'Bluetooth Earbuds',
-    description: 'True wireless earbuds with charging case.',
-    price: 99.99,
-    image: 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&q=80&w=500',
-    category: 'Electronics',
-    stock: 26,
-    rating: 4.4,
-  },
-  {
-    id: '25',
-    name: 'Bookshelf',
-    description: 'Five-tier wooden bookshelf for your collection.',
-    price: 179.99,
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=500',
-    category: 'Furniture',
-    stock: 8,
-    rating: 4.6,
-  },
-  {
-    id: '26',
-    name: 'Travel Mug',
-    description: 'Insulated travel mug to keep drinks hot or cold.',
-    price: 24.99,
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=500',
-    category: 'Accessories',
-    stock: 32,
-    rating: 4.3,
-  },
-  {
-    id: '27',
-    name: 'Monitor Stand',
-    description: 'Adjustable monitor stand for better ergonomics.',
-    price: 59.99,
-    image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&q=80&w=500',
-    category: 'Electronics',
-    stock: 15,
-    rating: 4.2,
-  },
-  {
-    id: '28',
-    name: 'Canvas Tote Bag',
-    description: 'Eco-friendly canvas tote bag for shopping.',
-    price: 14.99,
-    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=500',
-    category: 'Accessories',
-    stock: 40,
-    rating: 4.1,
-  },
-  {
-    id: '29',
-    name: 'Electric Kettle',
-    description: 'Fast-boiling electric kettle with temperature control.',
-    price: 69.99,
-    image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80&w=500',
-    category: 'Kitchen',
-    stock: 20,
-    rating: 4.5,
-  },
-  {
-    id: '30',
-    name: 'Desk Organizer',
-    description: 'Multi-compartment desk organizer for office supplies.',
-    price: 34.99,
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&q=80&w=500',
-    category: 'Office',
-    stock: 24,
-    rating: 4.4,
-  },
-];
+// Product data management - now using optimized category-based structure
+// This file imports from the centralized index for backward compatibility
+// For better performance and organization, import directly from './index.js'
 
-export default products; 
+import products from './index.js';
+
+// Re-export for backward compatibility
+export default products;
+
+/* 
+OPTIMIZED STRUCTURE OVERVIEW:
+├── src/data/
+│   ├── index.js              // Main entry point (70+ products)
+│   ├── products.js           // This file (backward compatibility)
+│   └── categories/
+│       ├── electronics.js    // 15 products
+│       ├── fashion.js        // 15 products
+│       ├── furniture.js      // 10 products
+│       ├── home.js           // 10 products
+│       ├── kitchen.js        // 10 products
+│       └── fitness.js        // 10 products
+
+BENEFITS:
+✅ Better organization by category
+✅ Easier maintenance and updates
+✅ Faster loading (load only needed categories)
+✅ Scalable structure for hundreds of products
+✅ Helper functions for common operations
+✅ Product statistics and analytics
+
+USAGE EXAMPLES:
+import products from './data/products.js';              // All products (this file)
+import products, { productStats } from './data/index.js';  // All products + utilities
+import { electronics } from './data/index.js';          // Electronics only
+import { getProductsByCategory } from './data/index.js'; // Helper functions
+*/ 
